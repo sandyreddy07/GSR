@@ -1,0 +1,128 @@
+
+super user : root (Administrator)
+====================================
+
+Main directory: / 
+
+sub Directories:
+
+boot  --> Kernel Directory (500M)
+root  --> super user home dir
+home  --> Normal user home dir,
+bin   --> Normal user exe commands. /bin/cd, /bin/ls
+sbin  --> super user commdnd. /sbin/fdisk
+etc   --> all service config dir (ip,ssh,nfs,http)
+dev   --> Device info (HDD)
+tmp   --> temperory dir
+var   --> Variable directory (system logs)
+===============================================================
+
+cd Command:
+#cd <path> ex: cd / (to change / directory)
+#cd - (To change previous directory)
+#cd .. (To change one directory Back)
+#cd ../.. (To change Two directory Back)
+================================================================
+#pwd - (to check current directory path)
+ls Command:
+ls -l (Current working directory lists)or ls -l <path> (Particular path lists)
+drwxr-xr-x.  20 root root  278 Sep  3 01:55 var  (directory)
+-rw-r--r--.   1 root root    0 Sep  3 02:31 1.txt  (file)
+lrwxrwxrwx.   1 root root    7 Aug 12  2018 bin -> usr/bin  (link file)
+- file
+d directory
+l link file
+
+rwx  : r-x : r-x
+owner:Group : others
+
+ls -l 
+ls -lt (time order)
+ls -ltr (time order reverse)
+ls -il (inode)
+----------------------------------------------
+ifconfig (IP check)
+hostname
+hostnamectl set-hostname besant.com
+free -h (Check Memory(RAM) size)
+fdisk -l (check storage size)
+df -h
+df -ih (inode file system)
+
+============================================================================================
+Day2:
+
+File Commands:
+
+touch filename  ==> touch raj.txt (to create new empty file)
+
+vi filename (new/existing) ==> to create and Modify the file.
+
+Inside vi, there are 3 modes.
+
+ESC (esc) [default]
+INSERT (i)
+COLON (:)
+
+vi raj.txt 
+
+Colon: (should come from Esc mode)
+:w only save
+:q or q! Only exit without save
+:wq or wq! Save and Exit
+:10 (cursor will move to 10th line)
+:%s/find_word/replace_word/g
+
+
+ESC:
+dd  --> delete cursor point line
+ndd(5dd)  --> number of line will delete from cursor point.
+yy and nyy --> single line and multiple lines will copy from curson point.
+p and np  --> paste.
+G -> go to last line
+gg -> Go to First Line	
+/serch word
+shift+g --> cursor will move to last line
+u  --> undo the changes
+
+cat:
+
+cat filename ==> cat raj.txt
+
+
+head passwd (display only first 10 line)
+head -5 passwd (display only first 5 line)
+tail passwd (display last 10 line)
+tail -3 passwd (display last 3 line)
+wc -l passwd
+
+tail -20 passwd | head- -5 (pipe line -> take the output of left side command and give the input to right side command, so outout is only display last 5 lines of last 20 lines)
+
+grep search_word passwd (to find the particular word in the file)
+grep -i search_word passwd (non case sensitive)
+egrep "word1|word2|word3" filename
+grep -v search_word files (except this word)
+
+cp -vf passwd /tmp (copy the file from current directory to /tmp directory)
+cp -vf passwd copy-passwd (copy the contents one file to another file) 
+rm -vf passwd (to delete the file)
+
+mkdir raj (to create new direcory)
+rm -rvf raj (to delete directory)
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
